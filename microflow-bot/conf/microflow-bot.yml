@@ -1,0 +1,31 @@
+dir:
+  data: ./data/
+  log: ./log/
+
+jobpool:
+  capacity: 3
+
+server:
+  listen: 7921
+
+consumer:
+  broker: failover://tcp://localhost:61616
+  name: microflow-bot-001
+  queue:
+    - microflow.con
+    - microflow.auncel
+    - microflow.bi
+
+database:
+  host: 127.0.0.1
+  port: 3306
+  database: microflow
+  user: microflow
+  password: microflow
+
+bashtask:
+  bash: /bin/bash
+
+qetask:
+  qeclient: /home/chenxin/.jumbo/bin/queryengine
+  default_param: --sessionconf engine=wing

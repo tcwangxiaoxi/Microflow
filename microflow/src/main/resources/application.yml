@@ -1,0 +1,28 @@
+jdbc:
+  dataSourceClassName: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+  url: jdbc:mysql://127.0.0.1:3306/microflow
+  useUnicode: true
+  charaterEncoding: utf8
+  databaseName: microflow
+  serverName: 127.0.0.1
+  username: root
+  password: 123
+  cachePrepStmts: true
+  prepStmtsSize: 250
+  prepStmtsCacheSqlLimit: 2048
+  userServerPrepStmts: true
+server:
+  port: 8082
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    show-sql: false
+    hibernate:
+      ddl-auto: create
+logging:
+  path: ./logs
+  file: microflow.log
+  level:
+    org.springframework.transaction: TRACE
+    com.ibatis: DEBUG
+#script.file.max.in.memory.size: 400KB
